@@ -14,20 +14,19 @@ cloudinary.config(cloudinaryConfig);
 // Function to upload a file to Cloudinary
 const uploadOnCloudinary = async (localFilePath) => {
   try {
-    // Ensure localFilePath is provided
-    console.log(localFilePath)
+    
     if (!localFilePath) {
       throw new Error("No file path provided");
     }
 
     // Upload the file to Cloudinary
-    console.log('Uploading file to Cloudinary');
+    //console.log('Uploading file to Cloudinary');
     const response = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "auto",
     });
 
     // File uploaded successfully
-    console.log("File uploaded successfully to Cloudinary:", response.url);
+   // console.log("File uploaded successfully to Cloudinary:", response.url);
 
     // Remove the locally saved temporary file
     fs.unlinkSync(localFilePath);
